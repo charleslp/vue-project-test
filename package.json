@@ -4,7 +4,9 @@
   "description": "vu项目搭建",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --inline --hot --open"
+    "dev": "cross-env ENV=dev webpack-dev-server --progress --config  webpack.config.js",
+    "test": "cross-env ENV=test webpack-dev-server --progress --config  webpack.config.js",
+    "pro": "cross-env ENV=pro webpack-dev-server --progress --config  webpack.config.js"
   },
   "author": "luopeng",
   "license": "ISC",
@@ -17,6 +19,7 @@
     "@babel/preset-env": "^7.0.0",
     "autoprefixer-loader": "^3.2.0",
     "babel-loader": "^8.0.0",
+    "cross-env": "^7.0.2",
     "css-loader": "^4.3.0",
     "html-webpack-plugin": "^4.4.1",
     "style-loader": "^1.2.1",

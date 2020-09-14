@@ -1,5 +1,6 @@
 'use strict';
 const path = require('path'); // 引入路径插件
+const webpack = require('webpack');
 const htmlWebpackPlugin = require('html-webpack-plugin'); // 引入模板渲染插件
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 module.exports = {
@@ -34,7 +35,12 @@ module.exports = {
         new htmlWebpackPlugin({
             template: './index.html',
         }),
-        new VueLoaderPlugin()
+        new VueLoaderPlugin(),
+        new webpack.DefinePlugin({  //环境变量装配
+			'process.env': {
+				ENV: JSON.stringify(process.env.ENV || 'dev')
+			},
+		}),
     ],
     // 如果服务器遇到跨域问题，下面是配置代理，解决跨域
     devServer: { //配置webpack-dev-server -> express服务器的选项
