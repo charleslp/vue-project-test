@@ -4,9 +4,10 @@
   "description": "vu项目搭建",
   "main": "index.js",
   "scripts": {
-    "dev": "cross-env ENV=dev webpack-dev-server --progress --config  webpack.config.js",
+    "dev": "cross-env ENV=dev NODE_ENV=development webpack-dev-server --progress --config  webpack.config.js",
     "test": "cross-env ENV=test webpack-dev-server --progress --config  webpack.config.js",
-    "pro": "cross-env ENV=pro webpack-dev-server --progress --config  webpack.config.js"
+    "pro": "cross-env ENV=pro webpack-dev-server --progress --config  webpack.config.js",
+    "start": "nodemon server"
   },
   "author": "luopeng",
   "license": "ISC",
@@ -21,7 +22,10 @@
     "babel-loader": "^8.0.0",
     "cross-env": "^7.0.2",
     "css-loader": "^4.3.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
     "html-webpack-plugin": "^4.4.1",
+    "nodemon": "^2.0.7",
     "style-loader": "^1.2.1",
     "vue-loader": "^15.9.3",
     "vue-router": "^3.4.3",
